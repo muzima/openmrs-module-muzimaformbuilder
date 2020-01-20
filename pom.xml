@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.openmrs.module</groupId>
+    <artifactId>muzimaformbuilder</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Muzima Form Builder Module</name>
+    <description>Muzima module that helps users to build muzima forms</description>
+    <url>https://wiki.muzima.org/display/muzima/Supporting+Modules</url>
+
+	<developers>
+		<developer>
+			<name>Muzima Team</name>
+			<url>http://muzima.org/</url>
+		</developer>
+	</developers>
+
+	<organization>
+		<name>OpenMRS</name>
+		<url>http://openmrs.org</url>
+	</organization>
+
+	<scm>
+		<connection>scm:git:https://wiki.muzima.org/display/muzima/Supporting+Modules</connection>
+		<developerConnection>scm:git:https://wiki.muzima.org/display/muzima/Supporting+Modules</developerConnection>
+		<url>https://wiki.muzima.org/display/muzima/Supporting+Modules</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<properties>
+		<openMRSVersion>1.9.9</openMRSVersion>
+	</properties>
+
+</project>
