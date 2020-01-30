@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping(value = "module/muzimaformbuilder/muzimaformbuilderLink.form")
-public class muzimaformbuilderFormController {
+public class MuzimaFormBuilderController {
 	
 	/** Logger for this class and subclasses */
 	protected final Log log = LogFactory.getLog(getClass());
