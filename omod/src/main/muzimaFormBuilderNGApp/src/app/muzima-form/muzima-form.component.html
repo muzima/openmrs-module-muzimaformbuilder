@@ -1,0 +1,20 @@
+<body class="col-md-10 col-md-offset-1">
+  <div id="result"></div>
+  <form id="basic_registration_form" name="basic_registration_form">
+    <div id="pre_populate_data"></div>
+    <h2 class="text-center">Basic Registration Form</h2>
+    <div cdkDropList id="formFieldsList" [cdkDropListData]="form.fields" (cdkDropListDropped)="onDrop($event)"
+      cdkDropListConnectedTo="fieldsList" class="section form-fields-list">
+      <div class="form-group" *ngFor="let field of form.fields" cdkDragBoundary=".form-fields-list" cdkDragLockAxis="y" cdkDrag>
+        <div class="handle-icon" cdkDragHandle>
+          <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+        </div>
+        <label for="patient.family_name">{{field.fieldLbl}}:  <span class="required" *ngIf="field.required">*</span> </label>
+        <input class="form-control" id="{{field.id}}" name="{{field.name}}" type="{{field.type}}" required="{{field.required}}">
+      </div> 
+    </div>
+  </form> 
+</body>
