@@ -1,0 +1,12 @@
+<div class="menu" [ngClass]="{'closed': !isOpened, 'shadow': isOpened}">
+  <i class="fas fa-bars menu-icon" (click)="toggle()"></i>
+  <div *ngIf="isOpened">
+    <div class="logo">
+      <img src="/assets/images/logo.png" width="283" height="283" alt="muzima logo">
+    </div>
+    <ul>
+      <li><a href="#">about</a></li>
+      <li><a href="#">user guide</a></li>
+    </ul>
+  </div>
+</div>
