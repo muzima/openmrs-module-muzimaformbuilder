@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -9,6 +9,7 @@ import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-d
 export class MuzimaFormComponent implements OnInit {
 
   @Input() form;
+  @Output() selectedField = new EventEmitter();
 
   constructor() { }
 
@@ -26,6 +27,11 @@ export class MuzimaFormComponent implements OnInit {
         event.currentIndex);
       console.log(this.form.fields);
     }
+  }
+
+  select(field) {
+    console.log('selected: ' + field);
+    this.selectedField.emit(field);
   }
 
 }

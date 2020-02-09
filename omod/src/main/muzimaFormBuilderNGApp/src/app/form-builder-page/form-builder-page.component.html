@@ -13,10 +13,10 @@
 
     </div>
     <div class="middle">
-        <app-form [form]="form"></app-form>
+        <app-form [form]="form" (selectedField)="setSelectedField($event)"></app-form>
     </div>
     <div class="side">
         <h3 class="title">attributes</h3>
-        <app-attributes></app-attributes>
+        <app-attributes [field]="field"></app-attributes>
     </div>
 </div>

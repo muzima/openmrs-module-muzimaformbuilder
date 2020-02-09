@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -11,10 +11,15 @@ export class FormComponent implements OnInit {
   color = 'primary';
   bgcolor = 'accent';
   @Input() form;
+  @Output() selectedField = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  select(field) {
+    this.selectedField.emit(field);
   }
 
 }

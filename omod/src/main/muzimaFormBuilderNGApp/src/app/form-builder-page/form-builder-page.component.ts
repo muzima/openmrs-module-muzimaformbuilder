@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormBuilderPageComponent implements OnInit {
 
+  field = {};
+
   categories = [
     {
       name: 'General',
@@ -77,6 +79,10 @@ export class FormBuilderPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setSelectedField(field) {
+    this.field = field;
   }
 
 }

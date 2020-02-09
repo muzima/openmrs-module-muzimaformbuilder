@@ -8,34 +8,36 @@ import { FormControl } from '@angular/forms';
 })
 export class AttributesComponent implements OnInit {
 
-  field = {
-    visible: true,
-    id: 'patient.idd',
-    name: 'input1',
-    text: '',
-    dataConcept: '',
-    fieldLbl: 'Enter Name',
-    defaultTxt: '',
-    type: 'select',
-    customCssClass: ['class', 'class2'],
-    readonly: false,
-    required: true,
-    conditionalLogic: [],
-    range: '',
-    inputMask: '',
-    errorMsg: '',
-    description: '',
-    options: [
-      {
-        value: 'female',
-        selected: true
-      },
-      {
-        value: 'male',
-        selected: false
-      }
-    ]
-  };
+  @Input() field;
+
+  // field = {
+  //   visible: true,
+  //   id: 'patient.idd',
+  //   name: 'input1',
+  //   text: '',
+  //   dataConcept: '',
+  //   fieldLbl: 'Enter Name',
+  //   defaultTxt: '',
+  //   type: 'select',
+  //   customCssClass: ['class', 'class2'],
+  //   readonly: false,
+  //   required: true,
+  //   conditionalLogic: [],
+  //   range: '',
+  //   inputMask: '',
+  //   errorMsg: '',
+  //   description: '',
+  //   options: [
+  //     {
+  //       value: 'female',
+  //       selected: true
+  //     },
+  //     {
+  //       value: 'male',
+  //       selected: false
+  //     }
+  //   ]
+  // };
 
   dataConcepts = [
       'data',
