@@ -1,0 +1,19 @@
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+  [ngClass]="{'open': panelOpenState, 'close': !panelOpenState}">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{category?.name}}
+    </mat-panel-title>
+    <mat-panel-description>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div cdkDropList id="fieldsList" cdkDropListSortingDisabled [cdkDropListData]="category?.fields"
+  cdkDropListConnectedTo="formFieldsList" (cdkDropListDropped)="onDrop($event)">
+
+    <mat-form-field appearance="outline" *ngFor="let field of category?.fields" cdkDrag>
+      <mat-label>{{field.fieldLbl}}</mat-label>
+      <input matInput placeholder=field.text value={{field.name}}>
+    </mat-form-field>
+    
+  </div>
+</mat-expansion-panel>
