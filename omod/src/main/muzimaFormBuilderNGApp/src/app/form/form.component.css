@@ -1,0 +1,17 @@
+.tab-content {
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    height: 100%;
+    width: 90%;
+}
+
+.mat-ink-bar{
+    background-color: #076b5f;
+    width: 50%;
+}
+
+[aria-label=primary] {
+    background-color: #076b5f;
+    width: 50%;
+}
