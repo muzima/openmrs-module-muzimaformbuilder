@@ -1,23 +1,23 @@
 <div class="attributes" *ngIf="(field | json) != '{}'">
   <mat-slide-toggle *ngIf="field.hasOwnProperty('visible')" [(ngModel)]="field.visible">visibility</mat-slide-toggle>
 
-  <mat-form-field appearance="fill" *ngIf="field['id']" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('id')" [color]="'accent'">
     <mat-label>ID</mat-label>
     <input matInput [(ngModel)]="field.id">
     <mat-error>must have</mat-error>
   </mat-form-field>
   
-  <mat-form-field appearance="fill" *ngIf="field['name']" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('name')" [color]="'accent'">
     <mat-label>Name</mat-label>
     <input [(ngModel)]="field.name" matInput>
   </mat-form-field>
 
-  <mat-form-field appearance="fill" *ngIf="field['text']" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('text')" [color]="'accent'">
     <mat-label>Text/Placeholder</mat-label>
     <input [(ngModel)]="field.text" matInput>
   </mat-form-field>
 
-  <mat-form-field appearance="fill" *ngIf="field['dataConcept']" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('dataConcept')" [color]="'accent'">
     <mat-label>Data Concept</mat-label>
     <input [(ngModel)]="field.dataConcept" matInput [matAutocomplete]="dataConceptAuto">
   </mat-form-field>
@@ -25,22 +25,22 @@
     <mat-option *ngFor="let dataConcept of dataConcepts" [value]="dataConcept">{{dataConcept}}</mat-option>
   </mat-autocomplete>
 
-  <mat-form-field appearance="fill" *ngIf="field['fieldLbl']" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('fieldLbl')" [color]="'accent'">
     <mat-label>Field Label</mat-label>
     <input [(ngModel)]="field.fieldLbl" matInput>
   </mat-form-field>
   
-  <mat-form-field appearance="fill" *ngIf="field['defaultTxt']" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('defaultTxt')" [color]="'accent'">
     <mat-label>Default Value</mat-label>
     <input [(ngModel)]="field.defaultTxt" matInput>
   </mat-form-field>
   
-  <mat-form-field appearance="fill" *ngIf="field['type']" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('type')" [color]="'accent'">
     <mat-label>Type</mat-label>
     <input [(ngModel)]="field.type" matInput>
   </mat-form-field>
   
-  <mat-form-field appearance="fill" *ngIf="field['customCssClass']" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('customCssClass')" [color]="'accent'">
     <mat-label>Custom CSS Class</mat-label>
     <input [(ngModel)]="field.customCssClass" matInput>
     <mat-hint>Seperate between classes by a Coma ','</mat-hint>
@@ -50,17 +50,17 @@
   <mat-checkbox *ngIf="field.hasOwnProperty('required')" [(ngModel)]="field.required">Required</mat-checkbox>
   <mat-checkbox *ngIf="field.hasOwnProperty('repeat')" [(ngModel)]="field.repeat">Repeat</mat-checkbox>
 
-  <mat-form-field appearance="fill" *ngIf="field['errorMsg']" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('errorMsg')" [color]="'accent'">
     <mat-label>Enter Error Message...</mat-label>
     <textarea matInput [(ngModel)]="field.errorMsg"></textarea>
   </mat-form-field>
 
-  <mat-form-field appearance="fill" *ngIf="field['description']" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('description')" [color]="'accent'">
     <mat-label>Enter Description...</mat-label>
     <textarea matInput [(ngModel)]="field.description"></textarea>
   </mat-form-field>
 
-  <div *ngIf="field['options'] && field.type === 'select'">
+  <div *ngIf="field.hasOwnProperty('options')&& field.type === 'select'">
     <div class="options-header">
       <span>Options</span>
       <button mat-mini-fab class="add-options" (click)="addOption()">
