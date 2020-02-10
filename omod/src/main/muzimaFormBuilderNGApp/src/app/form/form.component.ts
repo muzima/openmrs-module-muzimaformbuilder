@@ -10,6 +10,7 @@ export class FormComponent implements OnInit {
 
   color = 'primary';
   bgcolor = 'accent';
+  htmlCode = '';
   @Input() form;
   @Output() selectedField = new EventEmitter();
 
@@ -20,6 +21,10 @@ export class FormComponent implements OnInit {
 
   select(field) {
     this.selectedField.emit(field);
+  }
+
+  selHtmlCode(htmlCode) {
+    this.htmlCode = htmlCode;
   }
 
 }

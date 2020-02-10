@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -10,10 +10,18 @@ export class MuzimaFormComponent implements OnInit {
 
   @Input() form;
   @Output() selectedField = new EventEmitter();
+  @Output() htmlCodeEmitter = new EventEmitter();
 
-  constructor() { }
+  elRef: ElementRef;
+  htmlCode = '';
+
+  constructor(elRef: ElementRef) {
+    this.elRef = elRef;
+   }
 
   ngOnInit() {
+    this.htmlCode = this.elRef.nativeElement.innerHTML;
+    this.htmlCodeEmitter.emit(this.htmlCode);
   }
 
   onDrop(event: CdkDragDrop<string[]>) {
