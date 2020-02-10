@@ -5,3 +5,9 @@
   height: 24px;
   float: right;
 }
+
+.delete-icon {
+  float: right;
+  color: #ff0000;
+  cursor: grab;
+}

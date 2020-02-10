@@ -42,4 +42,7 @@ export class MuzimaFormComponent implements OnInit {
     this.selectedField.emit(field);
   }
 
+  deleteField({fields}, index) {
+    fields.splice(index, 1);
+  }
 }
