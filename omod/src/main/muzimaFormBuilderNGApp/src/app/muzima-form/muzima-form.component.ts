@@ -12,6 +12,8 @@ export class MuzimaFormComponent implements OnInit {
   @Output() selectedField = new EventEmitter();
   @Output() htmlCodeEmitter = new EventEmitter();
 
+  selected = {};
+
   elRef: ElementRef;
   htmlCode = '';
 
@@ -39,6 +41,7 @@ export class MuzimaFormComponent implements OnInit {
 
   select(field) {
     console.log('selected: ' + field);
+    this.selected = field;
     this.selectedField.emit(field);
   }
 
