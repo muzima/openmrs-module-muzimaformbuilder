@@ -1,13 +1,13 @@
 <mat-tab-group [color]="color" [backgroundColor]="">
   <mat-tab label="CODE" [aria-label]=color >
-    <div class="tab-content mat-elevation-z4">
+    <div class="tab-content">
       <pre>
         <code>{{htmlCode}}</code>
       </pre>
     </div>
   </mat-tab>
   <mat-tab label="PREVIEW" [aria-label]=color >
-    <div class="tab-content mat-elevation-z4">
+    <div class="tab-content">
       <app-muzima-form [form]="form" (selectedField)="select($event)" (htmlCodeEmitter)="selHtmlCode($event)"></app-muzima-form>
     </div>
   </mat-tab>
