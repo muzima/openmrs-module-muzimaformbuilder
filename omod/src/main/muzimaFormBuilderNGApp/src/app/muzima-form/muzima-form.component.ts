@@ -29,7 +29,7 @@ export class MuzimaFormComponent implements OnInit {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      copyArrayItem(event.previousContainer.data,
+      copyArrayItem(this.createCopy(event.previousContainer.data),
         event.container.data,
         event.previousIndex,
         event.currentIndex);
@@ -45,4 +45,9 @@ export class MuzimaFormComponent implements OnInit {
   deleteField({fields}, index) {
     fields.splice(index, 1);
   }
+
+  createCopy(data) {
+    return JSON.parse(JSON.stringify(data));
+  }
+
 }
