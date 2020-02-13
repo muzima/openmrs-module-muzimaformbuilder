@@ -47,7 +47,9 @@ export class MuzimaFormComponent implements OnInit {
 
   deleteField({fields}, index) {
     fields.splice(index, 1);
-    this.selectedField.emit({});
+    if (!fields.includes(this.selected)) {
+      this.selectedField.emit({});
+    }
   }
 
   createCopy(data) {
