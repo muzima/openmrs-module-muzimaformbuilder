@@ -8,23 +8,33 @@ import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-d
 })
 export class MuzimaFormComponent implements OnInit {
 
+  private changes: MutationObserver;
+  private elRef: ElementRef;
+
   @Input() form;
   @Output() selectedField = new EventEmitter();
   @Output() htmlCodeEmitter = new EventEmitter();
 
   selected = {};
-
-  elRef: ElementRef;
   htmlCode = '';
 
   constructor(elRef: ElementRef) {
     this.elRef = elRef;
+
+    this.changes = new MutationObserver((mutations: MutationRecord[]) => {
+      this.htmlCode = this.elRef.nativeElement.innerHTML;
+      this.htmlCodeEmitter.emit(this.htmlCode);
+    });
+
+    this.changes.observe(this.elRef.nativeElement, {
+      attributes: true,
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
    }
 
-  ngOnInit() {
-    this.htmlCode = this.elRef.nativeElement.innerHTML;
-    this.htmlCodeEmitter.emit(this.htmlCode);
-  }
+  ngOnInit() {}
 
   onDrop(event: CdkDragDrop<string[]>) {
     console.log(event);
@@ -49,6 +59,7 @@ export class MuzimaFormComponent implements OnInit {
     fields.splice(index, 1);
     if (!fields.includes(this.selected)) {
       this.selectedField.emit({});
+      this.selected = {};
     }
   }
 
