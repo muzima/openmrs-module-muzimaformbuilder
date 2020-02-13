@@ -26,3 +26,15 @@
     font-weight: 200;
     font-style: italic;
 }
+
+.side::-webkit-scrollbar, .middle::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+.side::-webkit-scrollbar-track, .middle::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #00000030;
+}
+
+.side::-webkit-scrollbar-thumb, .middle::-webkit-scrollbar-thumb{
+    background-color: #3cb38a;
+}
