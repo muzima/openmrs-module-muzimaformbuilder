@@ -13,6 +13,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { FormBuilderPageComponent } from './form-builder-page/form-builder-page.
 import { MuzimaFormComponent } from './muzima-form/muzima-form.component';
 import { AttributesComponent } from './attributes/attributes.component';
 import { OptionComponent } from './option/option.component';
+import { FormatCodePipe } from './pipes/format-code.pipe';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { OptionComponent } from './option/option.component';
     MuzimaFormComponent,
     AttributesComponent,
     OptionComponent,
+    FormatCodePipe,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { OptionComponent } from './option/option.component';
     MatSlideToggleModule,
     MatFormFieldModule,
     MatAutocompleteModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
