@@ -27,7 +27,7 @@ input.error {
     padding: 16px 23px;
     margin-right: 4px !important;
     border-radius: 4px;
-    /* background: #ffffff url("../images/barcode_icon.png") no-repeat center; */
+    background: #ffffff url("images/barcode_icon.png") no-repeat center;
 }
 
 .barcode_text {
@@ -44,7 +44,7 @@ input.error {
     margin: 4px;
     margin-right: 4px !important;
     border-radius: 4px;
-    /* background: #ffffff url("../images/camera_mg.png") no-repeat center; */
+    background: #ffffff url("images/camera_mg.png") no-repeat center;
 }
 
 .image_text {
@@ -60,7 +60,7 @@ input.error {
     padding: 16px 23px;
     margin-right: 4px !important;
     border-radius: 4px;
-    /* background: url("../images/record_img.png") no-repeat center; */
+    background: url("images/record_img.png") no-repeat center;
 }
 
 .audio_record_text {
@@ -76,7 +76,7 @@ input.error {
     padding: 16px 23px;
     margin-right: 4px !important;
     border-radius: 4px;
-    /* background: #ffffff url("../images/video_record_icon.png") no-repeat center; */
+    background: #ffffff url("images/video_record_icon.png") no-repeat center;
 }
 
 .video_record_text {
