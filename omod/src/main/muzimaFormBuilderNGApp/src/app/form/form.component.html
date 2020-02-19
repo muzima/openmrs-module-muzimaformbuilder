@@ -2,13 +2,14 @@
   <mat-tab label="CODE" [aria-label]=color >
     <div class="tab-content">
       <pre>
-        <code>{{htmlCode}}</code>
+        <code>{{htmlCode | formatCode}}</code>
       </pre>
     </div>
   </mat-tab>
   <mat-tab label="PREVIEW" [aria-label]=color >
     <div class="tab-content">
-      <app-muzima-form [form]="form" (selectedField)="select($event)" (htmlCodeEmitter)="selHtmlCode($event)"></app-muzima-form>
+      <app-muzima-form [form]="form" (selectedField)="select($event)" (htmlCodeEmitter)="selHtmlCode($event)" [sectionIds]="sectionIds">
+      </app-muzima-form>
     </div>
   </mat-tab>
 </mat-tab-group>

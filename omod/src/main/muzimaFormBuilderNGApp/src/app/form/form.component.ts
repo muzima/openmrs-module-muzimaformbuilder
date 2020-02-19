@@ -12,7 +12,9 @@ export class FormComponent implements OnInit {
   bgcolor = 'accent';
   htmlCode = '';
   @Input() form;
+  @Input() sectionIds;
   @Output() selectedField = new EventEmitter();
+  @Output() sectionIdsEmitter = new EventEmitter();
 
   constructor() { }
 
