@@ -12,6 +12,7 @@ export class MuzimaFormComponent implements OnInit {
   private elRef: ElementRef;
 
   @Input() form;
+  @Input() sectionIds;
   @Output() selectedField = new EventEmitter();
   @Output() htmlCodeEmitter = new EventEmitter();
 
@@ -32,9 +33,10 @@ export class MuzimaFormComponent implements OnInit {
       subtree: true,
       characterData: true
     });
-   }
 
-  ngOnInit() {}
+  }
+
+  ngOnInit() { }
 
   onDrop(event: CdkDragDrop<string[]>) {
     console.log(event);
@@ -45,7 +47,20 @@ export class MuzimaFormComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-      console.log(this.form.fields);
+    }
+  }
+
+  onDropSection(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      const id = this.addSection();
+      event.previousContainer.data[event.previousIndex]['id'] = id;
+      console.log(event.previousContainer.data[event.previousIndex]);
+      copyArrayItem(this.createCopy(event.previousContainer.data),
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
     }
   }
 
@@ -55,7 +70,7 @@ export class MuzimaFormComponent implements OnInit {
     this.selectedField.emit(field);
   }
 
-  deleteField({fields}, index) {
+  deleteField({ fields }, index) {
     fields.splice(index, 1);
     if (!fields.includes(this.selected)) {
       this.selectedField.emit({});
@@ -67,4 +82,10 @@ export class MuzimaFormComponent implements OnInit {
     return JSON.parse(JSON.stringify(data));
   }
 
+  addSection() {
+    const id = 'formFieldsList#' + this.sectionIds.length;
+    this.sectionIds.push(id);
+    console.log(this.sectionIds);
+    return id;
+  }
 }

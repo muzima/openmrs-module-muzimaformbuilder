@@ -12,8 +12,26 @@
   cursor: grab;
 }
 
+.visible-icon {
+  float: right;
+  color: #767978;
+}
+
 .selected {
   padding: 5px;
   border-radius: 5px;
   background: #dde4e1;
+}
+
+.form {
+  padding: 5px;
+  min-height: 500px;
+  -webkit-box-shadow: -1px -11px 25px 1px rgba(83,84,83,0.77);
+  -moz-box-shadow: -1px -11px 25px 1px rgba(83,84,83,0.77);
+  box-shadow: -1px -11px 25px 1px rgba(83,84,83,0.77);
+}
+
+.form > *{
+  padding: 5px;
+  min-height: 50px;
 }
