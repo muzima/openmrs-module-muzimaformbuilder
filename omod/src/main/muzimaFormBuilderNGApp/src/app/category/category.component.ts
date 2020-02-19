@@ -10,21 +10,11 @@ export class CategoryComponent implements OnInit {
 
   panelOpenState = false;
   @Input() category: Object;
+  @Input() sectionIds;
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  onDrop(event: CdkDragDrop<string[]>) {
-    console.log(event);
-    if (event.previousContainer !== event.container) {
-      console.log(this.category);
-      moveItemInArray(event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-      console.log('dropped');
-    }
   }
 
 }

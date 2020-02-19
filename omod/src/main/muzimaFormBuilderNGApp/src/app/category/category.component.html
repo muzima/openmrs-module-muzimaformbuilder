@@ -7,13 +7,12 @@
     <mat-panel-description>
     </mat-panel-description>
   </mat-expansion-panel-header>
-  <div cdkDropList id="fieldsList" cdkDropListSortingDisabled [cdkDropListData]="category?.fields"
-  cdkDropListConnectedTo="formFieldsList" (cdkDropListDropped)="onDrop($event)">
 
-    <mat-form-field appearance="outline" *ngFor="let field of category?.fields" cdkDrag>
-      <mat-label>{{field.fieldLbl}}</mat-label>
-      <input matInput placeholder=field.text value={{field.name}}>
-    </mat-form-field>
-    
+  <div cdkDropList id="{{ category.section? 'sectionsList' : 'fieldsList' }}" cdkDropListSortingDisabled
+    [cdkDropListData]="category?.fields"
+    [cdkDropListConnectedTo]="category.hasOwnProperty('section')? ['form'] : sectionIds" class="fieldsList">
+
+    <button mat-button routerLink="." *ngFor="let field of category?.fields" cdkDrag>{{ field.type }}</button>
+
   </div>
 </mat-expansion-panel>

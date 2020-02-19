@@ -6,3 +6,8 @@
 .close {
     background-color: #076B5F; 
 }
+
+.fieldsList button {
+    width: 100%;
+    margin-bottom: 5px;
+}
