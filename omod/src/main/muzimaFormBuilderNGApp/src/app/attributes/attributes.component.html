@@ -30,25 +30,42 @@
     <input [(ngModel)]="field.fieldLbl" matInput>
   </mat-form-field>
   
-  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('defaultTxt')" [color]="'accent'">
-    <mat-label>Default Value</mat-label>
-    <input [(ngModel)]="field.defaultTxt" matInput>
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('value')" [color]="'accent'">
+    <mat-label>Value</mat-label>
+    <input [(ngModel)]="field.value" matInput>
   </mat-form-field>
   
-  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('type')" [color]="'accent'">
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('inputType')" [color]="'accent'">
     <mat-label>Type</mat-label>
-    <input [(ngModel)]="field.type" matInput>
+    <input [(ngModel)]="field.inputType" matInput>
   </mat-form-field>
   
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('rows')" [color]="'accent'">
+    <mat-label>Rows</mat-label>
+    <input [(ngModel)]="field.rows" matInput type="number">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('columns')" [color]="'accent'">
+    <mat-label>Columns</mat-label>
+    <input [(ngModel)]="field.columns" matInput type="number">
+  </mat-form-field>
+
   <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('customCssClass')" [color]="'accent'">
     <mat-label>Custom CSS Class</mat-label>
     <input [(ngModel)]="field.customCssClass" matInput>
     <mat-hint>Seperate between classes by a Coma ','</mat-hint>
   </mat-form-field>
 
+  <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('inputMask')" [color]="'accent'">
+    <mat-label>Input Mask</mat-label>
+    <input [(ngModel)]="field.inputMask" matInput>
+    <mat-hint></mat-hint>
+  </mat-form-field>
+
   <mat-checkbox *ngIf="field.hasOwnProperty('readonly')" [(ngModel)]="field.readonly">Readonly</mat-checkbox>
   <mat-checkbox *ngIf="field.hasOwnProperty('required')" [(ngModel)]="field.required">Required</mat-checkbox>
   <mat-checkbox *ngIf="field.hasOwnProperty('repeat')" [(ngModel)]="field.repeat">Repeat</mat-checkbox>
+  <mat-checkbox *ngIf="field.hasOwnProperty('checked')" [(ngModel)]="field.checked">Checked</mat-checkbox>
 
   <mat-form-field appearance="fill" *ngIf="field.hasOwnProperty('errorMsg')" [color]="'accent'">
     <mat-label>Enter Error Message...</mat-label>
@@ -60,7 +77,7 @@
     <textarea matInput [(ngModel)]="field.description"></textarea>
   </mat-form-field>
 
-  <div *ngIf="field.hasOwnProperty('options')&& field.type === 'select'">
+  <div *ngIf="field.hasOwnProperty('options')">
     <div class="options-header">
       <span>Options</span>
       <button mat-mini-fab class="add-options" (click)="addOption()">
@@ -71,5 +88,10 @@
       <app-option *ngFor="let option of field.options" [option]="option"></app-option>
     </div>
   </div>
+
+  <mat-radio-group aria-label="Select an option" *ngIf="field.hasOwnProperty('fieldsetType')" [(ngModel)]="field.fieldsetType">
+    <mat-radio-button value="checkbox">CheckBox</mat-radio-button>
+    <mat-radio-button value="radio">Radio</mat-radio-button>
+  </mat-radio-group>
 
 </div>

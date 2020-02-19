@@ -52,10 +52,21 @@ export class AttributesComponent implements OnInit {
   }
 
   addOption() {
-    this.field.options.push({
-      value: 'binary',
-      selected: false
-    });
+    if (this.field.type === 'select') {
+      this.field.options.push({
+        value: 'val',
+        label: 'lbl'
+      });
+    } else {
+      // for fieldset option
+      this.field.options.push({
+        label: 'LBL',
+        value: 'value',
+        checked: false,
+        hasFreeTxt: false,
+        onlyChoice: false
+      });
+    }
   }
 
 }
