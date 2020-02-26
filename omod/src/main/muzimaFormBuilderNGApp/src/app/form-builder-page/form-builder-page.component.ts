@@ -30,7 +30,10 @@ export class FormBuilderPageComponent implements OnInit {
           conditionalLogic: [],
           range: '',
           inputMask: '',
-          errorMsg: ''
+          errorMsg: '',
+          isPastDate: false,
+          min: null,
+          max: null
         },
         {
           type: 'textarea',
