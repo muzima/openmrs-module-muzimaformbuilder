@@ -34,10 +34,13 @@
             {{field.fieldLbl}}: <span class="required" *ngIf="field.required">*</span>
           </label>
 
-          <input class="form-control" id="{{field.id}}" name="{{field.name}}" type="{{field.inputType}}"
+          <input *ngSwitchCase="'input'" 
+          class="form-control {{ field.inputType === 'date'? field.isPastDate? 'datepicker nonFutureDate past-date' : 'datepicker' : '' }}" 
+          id="{{field.id}}" name="{{field.name}}" type="{{field.inputType}}"
             placeholder="{{field.text}}" value="{{field.value}}" [attr.required]="field.required? '' : null"
             [attr.readonly]="field.readonly? '' : null" [attr.data-concept]="field.dataConcept"
-            [attr.pattern]="field.inputMask" *ngSwitchCase="'input'">
+            [attr.pattern]="field.inputMask" [attr.min]="field.inputType === 'number'? field.min : null" 
+            [attr.max]="field.inputType === 'number'? field.max : null">
 
           <textarea class="form-control" id="{{field.id}}" name="{{field.name}}" placeholder="{{field.text}}"
             value="{{field.value}}" [attr.required]="field.required? '' : null"
