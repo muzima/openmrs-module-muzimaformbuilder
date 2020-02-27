@@ -1,19 +1,20 @@
+.icon {
+  float: right;
+}
+
 .handle-icon {
   color: #ccc;
   cursor: move;
   width: 24px;
   height: 24px;
-  float: right;
 }
 
 .delete-icon {
-  float: right;
   color: #ff0000;
   cursor: grab;
 }
 
 .visible-icon {
-  float: right;
   color: #767978;
 }
 
