@@ -9,10 +9,14 @@
     </mat-icon>
     <input type="text" class="search" (focus)="isSearchFocused=true" (focusout)="isSearchFocused=false" [(ngModel)]="searchText">
   </div>
+
+  <button class="add-form" mat-raised-button color="accent">
+    <mat-icon>add</mat-icon> FORM
+  </button>
   
   <div class="form-container">
     <app-form-view *ngFor="let form of forms | filter:searchText" [form]="form"></app-form-view>
   </div>
-  
+
 </div>
 <router-outlet></router-outlet>

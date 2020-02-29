@@ -33,6 +33,13 @@
   color: #179280;
 }
 
+.add-form {
+  margin: 20px 100px 0px;
+  background-color: #fff;
+  border-radius: 2.5em;
+  padding: 0px 15px;
+}
+
 .icon-animation {
   animation: iconFrames ease-in-out 0.5s;
   animation-iteration-count: 1;
