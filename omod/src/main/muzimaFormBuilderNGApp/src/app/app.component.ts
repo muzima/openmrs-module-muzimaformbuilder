@@ -7,16 +7,37 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'muzimaFormBuilderNGApp';
-  form = {name: 'form1'};
-  categories = {name: 'General', fields: [
-  {
-  type: 'input'
-  },
-  {
-  type: 'textarea'
-  },
-  {
-  type: ''
-  }
-  ]};
+  searchText;
+  forms = [
+    {
+      name: 'Form Name',
+      description: 'a basic form',
+      sections: []
+    },
+    {
+      name: 'Registeration Form',
+      description: 'simple registeration form',
+      sections: []
+    },
+    {
+      name: 'Encounter Form',
+      description: 'first encounter form',
+      sections: []
+    },
+    {
+      name: 'Form Name',
+      description: 'a basic form',
+      sections: []
+    },
+    {
+      name: 'Registeration Form',
+      description: 'simple registeration form',
+      sections: []
+    },
+    {
+      name: 'Encounter Form',
+      description: 'first encounter form',
+      sections: []
+    }
+  ];
 }

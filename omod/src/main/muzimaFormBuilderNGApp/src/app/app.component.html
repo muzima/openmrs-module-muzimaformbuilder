@@ -1,5 +1,8 @@
 <div class="menu">
   <app-menu></app-menu>
 </div>
-<app-form-builder-page></app-form-builder-page>
+<input type="text" [(ngModel)]="searchText">
+<div>
+  <app-form-view *ngFor="let form of forms | filter:searchText" [form]="form"></app-form-view>
+</div>
 <router-outlet></router-outlet>
