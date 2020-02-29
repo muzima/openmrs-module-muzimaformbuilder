@@ -3,3 +3,15 @@
     right: 20px;
     top: 50px;
 }
+
+.form-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.form-container > * {
+    margin: 20px;
+}
