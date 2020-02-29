@@ -4,6 +4,10 @@
   top: 50px;
 }
 
+.container {
+    padding: 60px 20px;
+}
+
 .form-container {
   display: flex;
   justify-content: space-evenly;
