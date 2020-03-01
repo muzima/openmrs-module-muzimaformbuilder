@@ -12,3 +12,17 @@ h1 {
     text-align: center;
     cursor: pointer;
 }
+
+.form {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.field {
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}

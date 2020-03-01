@@ -28,6 +28,7 @@ import { MuzimaFormComponent } from './muzima-form/muzima-form.component';
 import { AttributesComponent } from './attributes/attributes.component';
 import { OptionComponent } from './option/option.component';
 import { FormatCodePipe } from './pipes/format-code.pipe';
+import { BlankFormDialogComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FormatCodePipe } from './pipes/format-code.pipe';
     AttributesComponent,
     OptionComponent,
     FormatCodePipe,
+    BlankFormDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +66,6 @@ import { FormatCodePipe } from './pipes/format-code.pipe';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [PopupComponent]
+  entryComponents: [PopupComponent, BlankFormDialogComponent]
 })
 export class AppModule { }
