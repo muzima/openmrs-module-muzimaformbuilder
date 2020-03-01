@@ -63,6 +63,7 @@ import { FormatCodePipe } from './pipes/format-code.pipe';
     Ng2SearchPipeModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PopupComponent]
 })
 export class AppModule { }

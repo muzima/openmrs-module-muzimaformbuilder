@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.option {
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
+}

@@ -10,7 +10,7 @@
     <input type="text" class="search" (focus)="isSearchFocused=true" (focusout)="isSearchFocused=false" [(ngModel)]="searchText">
   </div>
 
-  <button class="add-form" mat-raised-button color="accent">
+  <button class="add-form" mat-raised-button color="accent" (click)="openDialog()">
     <mat-icon>add</mat-icon> FORM
   </button>
   
