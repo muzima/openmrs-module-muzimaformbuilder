@@ -3,12 +3,7 @@
 </div>
 <div class="container">
 
-  <div>
-    <mat-icon class="icon" [ngClass]="{'icon-animation': !isSearchFocused, 'reverse-animation': isSearchFocused}">
-      search
-    </mat-icon>
-    <input type="text" class="search" (focus)="isSearchFocused=true" (focusout)="isSearchFocused=false" [(ngModel)]="searchText">
-  </div>
+  <app-search (searchTextEmitter)="setSearchText($event)" class="search-input" ></app-search>
 
   <button class="add-form" mat-raised-button color="accent" (click)="openDialog()">
     <mat-icon>add</mat-icon> FORM

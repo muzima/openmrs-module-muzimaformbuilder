@@ -74,4 +74,8 @@ export class AppComponent {
     });
   }
 
+  setSearchText(data) {
+    this.searchText = data;
+  }
+
 }

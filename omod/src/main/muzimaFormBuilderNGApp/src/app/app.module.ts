@@ -20,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormViewComponent } from './form-view/form-view.component';
 import { MenuComponent } from './menu/menu.component';
-import { PopupComponent } from './popup/popup.component';
+import { PopupComponent, BlankFormDialogComponent } from './popup/popup.component';
 import { CategoryComponent } from './category/category.component';
 import { FormComponent } from './form/form.component';
 import { FormBuilderPageComponent } from './form-builder-page/form-builder-page.component';
@@ -28,7 +28,7 @@ import { MuzimaFormComponent } from './muzima-form/muzima-form.component';
 import { AttributesComponent } from './attributes/attributes.component';
 import { OptionComponent } from './option/option.component';
 import { FormatCodePipe } from './pipes/format-code.pipe';
-import { BlankFormDialogComponent } from './popup/popup.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { BlankFormDialogComponent } from './popup/popup.component';
     AttributesComponent,
     OptionComponent,
     FormatCodePipe,
-    BlankFormDialogComponent
+    BlankFormDialogComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
