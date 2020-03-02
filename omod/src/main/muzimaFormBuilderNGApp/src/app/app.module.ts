@@ -29,6 +29,7 @@ import { AttributesComponent } from './attributes/attributes.component';
 import { OptionComponent } from './option/option.component';
 import { FormatCodePipe } from './pipes/format-code.pipe';
 import { SearchComponent } from './search/search.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { SearchComponent } from './search/search.component';
     FormatCodePipe,
     BlankFormDialogComponent,
     ReuseFormDialogComponent,
-    SearchComponent
+    SearchComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
