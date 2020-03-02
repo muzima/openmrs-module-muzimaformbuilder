@@ -80,6 +80,10 @@ export class HomePageComponent implements OnInit {
     this.searchText = data;
   }
 
+  deleteForm(index) {
+    this.forms.splice(index, 1);
+  }
+
   ngOnInit() {
   }
 

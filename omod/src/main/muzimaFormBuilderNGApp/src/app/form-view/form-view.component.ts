@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormService } from '../form.service';
 import { Router } from '@angular/router';
 
@@ -11,12 +11,15 @@ export class FormViewComponent implements OnInit {
 
   @Input() form: any;
   @Input() withControls: boolean;
+  @Output() deleteFormEmitter = new EventEmitter();
 
   constructor( private router: Router, private formService: FormService ) { }
 
   ngOnInit() { }
 
-  delete() {}
+  delete() {
+    this.deleteFormEmitter.emit('true');
+  }
 
   openFormBuilder() {
     this.formService.setForm(this.form);
