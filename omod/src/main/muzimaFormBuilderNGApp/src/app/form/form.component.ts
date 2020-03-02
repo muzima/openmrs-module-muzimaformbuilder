@@ -34,7 +34,7 @@ export class FormComponent implements OnInit {
     // keep it in this order it's important!
     this.htmlCode = this.htmlCode.replace(new RegExp('novalidate=""', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('"ng-[^"]+": "[^"]*"', 'g'), '');
-    this.htmlCode = this.htmlCode.replace(new RegExp('_ngcontent-.{2}=""', 'g'), '');
+    this.htmlCode = this.htmlCode.replace(new RegExp('_ngcontent-.[0-9]{2}=""', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('ng-[^"]+="[^"]*"', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('ng-[^ "]+', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('cdk[^=-]*="[^"]*"', 'g'), '');
