@@ -43,7 +43,7 @@
       </svg>
       <h3>Blank Form</h3>
     </div>
-    <div class="option">
+    <div class="option" (click)="openTemplatesFormDialog()">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
         x="0px" y="0px" width="150px" height="150px" viewBox="0 0 31.273 31.273"
         style="enable-background:new 0 0 31.273 31.273;" xml:space="preserve">
@@ -57,7 +57,7 @@
       </svg>
       <h3>Choose Template</h3>
     </div>
-    <div class="option">
+    <div class="option" (click)="openDuplicateFormDialog()">
       <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 497.883 497.883" height="150px"
         viewBox="0 0 497.883 497.883" width="150px" class="">
         <g>
@@ -73,7 +73,3 @@
     </div>
   </div>
 </div>
-<!-- <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="" cdkFocusInitial>Ok</button>
-</div> -->

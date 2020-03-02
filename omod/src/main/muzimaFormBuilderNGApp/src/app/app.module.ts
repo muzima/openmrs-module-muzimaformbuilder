@@ -20,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormViewComponent } from './form-view/form-view.component';
 import { MenuComponent } from './menu/menu.component';
-import { PopupComponent, BlankFormDialogComponent } from './popup/popup.component';
+import { PopupComponent, BlankFormDialogComponent, ReuseFormDialogComponent } from './popup/popup.component';
 import { CategoryComponent } from './category/category.component';
 import { FormComponent } from './form/form.component';
 import { FormBuilderPageComponent } from './form-builder-page/form-builder-page.component';
@@ -44,6 +44,7 @@ import { SearchComponent } from './search/search.component';
     OptionComponent,
     FormatCodePipe,
     BlankFormDialogComponent,
+    ReuseFormDialogComponent,
     SearchComponent
   ],
   imports: [
@@ -67,6 +68,6 @@ import { SearchComponent } from './search/search.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [PopupComponent, BlankFormDialogComponent]
+  entryComponents: [PopupComponent, BlankFormDialogComponent, ReuseFormDialogComponent]
 })
 export class AppModule { }

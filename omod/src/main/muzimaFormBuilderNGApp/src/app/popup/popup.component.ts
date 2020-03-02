@@ -32,6 +32,28 @@ export class PopupComponent implements OnInit {
     });
   }
 
+  openTemplatesFormDialog(): void {
+    const dialogRef = this.dialog.open(ReuseFormDialogComponent, {
+      width: '800px',
+      data: { forms: this.data.templates }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The Templates Form dialog was closed');
+    });
+  }
+
+  openDuplicateFormDialog(): void {
+    const dialogRef = this.dialog.open(ReuseFormDialogComponent, {
+      width: '800px',
+      data: { forms: this.data.forms }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The Templates Form dialog was closed');
+    });
+  }
+
 }
 
 @Component({
@@ -54,6 +76,34 @@ export class BlankFormDialogComponent {
 
   openFormBuilder(): void {
     // route to form builder
+  }
+
+}
+
+@Component({
+  selector: 'app-blank-form-dialog',
+  templateUrl: 'reuse-form-dialog.html',
+  styleUrls: ['./popup.component.css']
+})
+export class ReuseFormDialogComponent {
+
+  selectedForm;
+  searchText: string;
+
+  constructor(
+    public dialogRef: MatDialogRef<ReuseFormDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  openFormBuilder(): void {
+    // route to form builder
+  }
+
+  setSearchText(data) {
+    this.searchText = data;
   }
 
 }
