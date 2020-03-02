@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-form',
@@ -16,7 +17,7 @@ export class FormComponent implements OnInit {
   @Output() selectedField = new EventEmitter();
   @Output() sectionIdsEmitter = new EventEmitter();
 
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -59,6 +60,26 @@ export class FormComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
+    this.notify();
+  }
+
+  notify() {
+    this._snackBar.openFromComponent(NotifyComponent, {
+      duration: 5000,
+    });
   }
 
 }
+
+@Component({
+  selector: 'app-notify',
+  template: `<span class="notification">
+                Code Copied! ✔
+              </span>`,
+  styles: [`
+    .notification {
+      color: #076b5f;
+    }
+  `],
+})
+export class NotifyComponent { }

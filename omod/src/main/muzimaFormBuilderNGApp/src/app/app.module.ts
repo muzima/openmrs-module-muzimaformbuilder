@@ -15,6 +15,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,7 @@ import { FormViewComponent } from './form-view/form-view.component';
 import { MenuComponent } from './menu/menu.component';
 import { PopupComponent, BlankFormDialogComponent, ReuseFormDialogComponent } from './popup/popup.component';
 import { CategoryComponent } from './category/category.component';
-import { FormComponent } from './form/form.component';
+import { FormComponent, NotifyComponent } from './form/form.component';
 import { FormBuilderPageComponent } from './form-builder-page/form-builder-page.component';
 import { MuzimaFormComponent } from './muzima-form/muzima-form.component';
 import { AttributesComponent } from './attributes/attributes.component';
@@ -48,7 +49,8 @@ import { FormService } from './form.service';
     BlankFormDialogComponent,
     ReuseFormDialogComponent,
     SearchComponent,
-    HomePageComponent
+    HomePageComponent,
+    NotifyComponent
   ],
   imports: [
     BrowserModule,
@@ -67,12 +69,13 @@ import { FormService } from './form.service';
     MatAutocompleteModule,
     MatCheckboxModule,
     MatRadioModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    MatSnackBarModule
   ],
   providers: [
     FormService
   ],
   bootstrap: [AppComponent],
-  entryComponents: [PopupComponent, BlankFormDialogComponent, ReuseFormDialogComponent]
+  entryComponents: [PopupComponent, BlankFormDialogComponent, ReuseFormDialogComponent, NotifyComponent]
 })
 export class AppModule { }
