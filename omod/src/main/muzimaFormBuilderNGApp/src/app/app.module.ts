@@ -32,6 +32,7 @@ import { FormatCodePipe } from './pipes/format-code.pipe';
 import { SearchComponent } from './search/search.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FormService } from './form.service';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { FormService } from './form.service';
     ReuseFormDialogComponent,
     SearchComponent,
     HomePageComponent,
-    NotifyComponent
+    NotifyComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
