@@ -12,3 +12,9 @@
     background-color: #076b5f;
     width: 50%;
 }
+
+.copy-icon {
+    float: right;
+    cursor: pointer;
+    color: #076b5f;
+}

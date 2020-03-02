@@ -1,6 +1,7 @@
 <mat-tab-group [color]="color" [backgroundColor]="">
   <mat-tab label="CODE" [aria-label]=color >
     <div class="tab-content">
+      <mat-icon class="copy-icon" (click)="copyMessage()">file_copy</mat-icon>
       <pre>
         <code>{{htmlCode | formatCode}}</code>
       </pre>
