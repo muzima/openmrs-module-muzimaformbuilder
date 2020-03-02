@@ -30,6 +30,7 @@ import { OptionComponent } from './option/option.component';
 import { FormatCodePipe } from './pipes/format-code.pipe';
 import { SearchComponent } from './search/search.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { FormService } from './form.service';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,9 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatRadioModule,
     Ng2SearchPipeModule
   ],
-  providers: [],
+  providers: [
+    FormService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [PopupComponent, BlankFormDialogComponent, ReuseFormDialogComponent]
 })
