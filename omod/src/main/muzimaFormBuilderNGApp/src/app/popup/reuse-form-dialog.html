@@ -8,7 +8,7 @@
             
             <div class="form-container">
               <app-form-view *ngFor="let form of data.forms | filter:searchText" [form]="form" (click)="selectedForm = form" 
-              [ngClass]="{'selected': selectedForm === form}" class="pointer"></app-form-view>
+              [ngClass]="{'selected': selectedForm === form}" class="pointer hover"></app-form-view>
             </div>
           
         </div>
