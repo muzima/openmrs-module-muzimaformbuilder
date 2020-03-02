@@ -10,7 +10,7 @@
   </button>
   
   <div class="form-container">
-    <app-form-view *ngFor="let form of forms | filter:searchText" [form]="form"></app-form-view>
+    <app-form-view *ngFor="let form of forms | filter:searchText" [form]="form" [withControls]="true"></app-form-view>
   </div>
 
 </div>
