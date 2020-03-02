@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormService } from '../form.service';
 
 @Component({
   selector: 'app-form-builder-page',
@@ -9,7 +10,7 @@ export class FormBuilderPageComponent implements OnInit {
 
   field = {};
   sectionIds = [];
-
+  form;
   categories = [
     {
       name: 'General',
@@ -184,14 +185,10 @@ export class FormBuilderPageComponent implements OnInit {
     }
   ];
 
-  form = {
-    name: 'Form Name',
-    sections: []
-  };
-
-  constructor() { }
+  constructor( private formService: FormService) { }
 
   ngOnInit() {
+    this.form = this.formService.getForm();
   }
 
   setSelectedField(field) {
