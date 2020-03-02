@@ -99,7 +99,7 @@
       </button>
     </div>
     <div class="options">
-      <app-option *ngFor="let option of field.options" [option]="option"></app-option>
+      <app-option *ngFor="let option of field.options; index as i" [option]="option" (deleteEmitter)="deleteOption(i)"></app-option>
     </div>
   </div>
 

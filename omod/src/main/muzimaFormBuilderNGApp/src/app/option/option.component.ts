@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-option',
@@ -8,13 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class OptionComponent implements OnInit {
 
   @Input() option;
-  // option = {
-  //   value: 'female',
-  //   id: 'idddd',
-  //   selected: true,
-  //   hasFreeTxt: false,
-  //   onlyChoice: true
-  // };
+  @Output() deleteEmitter = new EventEmitter();
   panelOpenState = true;
 
   constructor() { }
@@ -23,7 +17,7 @@ export class OptionComponent implements OnInit {
   }
 
   deleteOption() {
-    delete this.option;
+    this.deleteEmitter.emit('true');
   }
 
 }
