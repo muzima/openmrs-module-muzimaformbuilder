@@ -1,9 +1,10 @@
 .search {
   border: 1px solid #08685c;
   border-radius: 2.5em;
-  height: 30px;
+  height: 20px;
   width: 25%;
   min-width: 400px;
+  padding: 10px;
 }
 
 .icon {
