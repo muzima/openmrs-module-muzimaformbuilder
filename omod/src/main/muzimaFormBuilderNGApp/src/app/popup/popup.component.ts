@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { FormService } from '../form.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -40,6 +42,9 @@ export class PopupComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The Templates Form dialog was closed');
+      if (result === 'close') {
+        this.dialogRef.close();
+      }
     });
   }
 
@@ -51,6 +56,9 @@ export class PopupComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The Templates Form dialog was closed');
+      if (result === 'close') {
+        this.dialogRef.close();
+      }
     });
   }
 
@@ -67,7 +75,10 @@ export class BlankFormDialogComponent {
   description: String;
 
   constructor(
+    private router: Router,
+    private formService: FormService,
     public dialogRef: MatDialogRef<BlankFormDialogComponent>,
+    public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data) {}
 
   onNoClick(): void {
@@ -75,7 +86,15 @@ export class BlankFormDialogComponent {
   }
 
   openFormBuilder(): void {
-    // route to form builder
+    const form = {
+      name: this.name,
+      description: this.description,
+      sections: []
+    };
+
+    this.formService.setForm(form);
+    this.router.navigate(['formBuilder']);
+    this.dialog.closeAll();
   }
 
 }
@@ -91,7 +110,10 @@ export class ReuseFormDialogComponent {
   searchText: string;
 
   constructor(
+    private router: Router,
+    private formService: FormService,
     public dialogRef: MatDialogRef<ReuseFormDialogComponent>,
+    public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data) {}
 
   onNoClick(): void {
@@ -99,7 +121,9 @@ export class ReuseFormDialogComponent {
   }
 
   openFormBuilder(): void {
-    // route to form builder
+    this.formService.setForm(this.selectedForm);
+    this.router.navigate(['formBuilder']);
+    this.dialog.closeAll();
   }
 
   setSearchText(data) {
