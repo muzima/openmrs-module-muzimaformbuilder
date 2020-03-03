@@ -1,6 +1,7 @@
 .tab-content {
     padding: 16px;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 .mat-ink-bar{
