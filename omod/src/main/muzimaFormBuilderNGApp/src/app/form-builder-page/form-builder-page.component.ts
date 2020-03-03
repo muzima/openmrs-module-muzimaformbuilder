@@ -195,4 +195,19 @@ export class FormBuilderPageComponent implements OnInit {
     this.field = field;
   }
 
+  addSection() {
+    const id = 'formFieldsList#' + this.sectionIds.length;
+    this.sectionIds.push(id);
+    if ( this.form.sections ) {
+      this.form.sections.push({
+        type: 'section',
+        title: '',
+        dataConcept: '',
+        id: id,
+        fields: [],
+        repeat: false
+      });
+    }
+  }
+
 }

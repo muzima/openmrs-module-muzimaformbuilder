@@ -38,3 +38,8 @@
 .side::-webkit-scrollbar-thumb, .middle::-webkit-scrollbar-thumb{
     background-color: #3cb38a;
 }
+
+.add-section {
+    width: 100%;
+    margin-top: 10px;
+}
