@@ -10,7 +10,8 @@
         (cdkDropListDropped)="onDrop($event)" cdkDropListConnectedTo="fieldsList" class="section fields-list"
         cdkDragBoundary=".form" cdkDragLockAxis="y" cdkDrag [attr.repeat]="section.repeat? '' : null">
 
-        <div *ngFor="let field of section.fields; index as i;" class="form-group {{field.customCssClass}}"
+        <div *ngFor="let field of section.fields; index as i;" 
+        class="form-group {{field.customCssClass}} {{ field.visible? '' : 'hidden' }}"
           (click)="select(field)" cdkDragBoundary=".fields-list" cdkDragLockAxis="y" cdkDrag
           [ngClass]="{'selected': field === selected}" [ngSwitch]="field.type">
 
