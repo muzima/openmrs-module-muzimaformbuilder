@@ -66,4 +66,30 @@ export class MuzimaFormComponent implements OnInit {
     console.log(this.sectionIds);
     return id;
   }
+
+  moveup(index) {
+    if (index !== 0) {
+      this.swap(this.form.sections, index, index - 1);
+    }
+  }
+
+  movedown(index) {
+    if (index !== this.form.sections.length - 1) {
+      this.swap(this.form.sections, index, index + 1);
+    }
+  }
+
+  delete(index) {
+    this.form.sections.splice(index, 1);
+    if (!this.form.sections.includes(this.selected)) {
+      this.selectedField.emit({});
+      this.selected = {};
+    }
+  }
+
+  swap(arr, index1, index2) {
+    const temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+  }
 }
