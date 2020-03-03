@@ -8,5 +8,35 @@
 
 .form > *{
   padding: 5px;
-  min-height: 50px;
+}
+
+.section-container {
+  display: flex;
+}
+
+.section-controllers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px 0px;
+  align-items: center;
+}
+
+.section-controllers .arrow {
+  color: #6aa69f;
+  cursor: pointer;
+}
+
+.section-controllers .radio {
+  border: 1px solid #6aa69f;
+}
+
+.section-controllers .delete {
+  color: #f00;
+  cursor: pointer;
+}
+
+.section-comp {
+  width: 100%;
+  min-height: 100px;
 }

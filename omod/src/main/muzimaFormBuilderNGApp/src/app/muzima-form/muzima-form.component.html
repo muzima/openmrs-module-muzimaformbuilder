@@ -5,7 +5,15 @@
     <h2 class="text-center">{{ form.name }}</h2>
     <div id="form" class="form" >
       
-      <app-section *ngFor="let section of form?.sections" [section]="section" (selectEmitter)="select($event)"></app-section>
+      <div *ngFor="let section of form?.sections" class="section-container">
+        <div class="section-controllers">
+          <mat-icon class="arrow">arrow_upward</mat-icon>
+          <input type="radio" name="section" id="{{ section.id }}" class="radio">
+          <mat-icon class="delete">delete</mat-icon>
+          <mat-icon class="arrow">arrow_downward</mat-icon>
+        </div>
+        <app-section [section]="section" (selectEmitter)="select($event)" class="section-comp"></app-section>
+      </div>
 
     </div>
   </form>
