@@ -4,7 +4,7 @@ import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-d
 @Component({
   selector: 'app-muzima-form',
   templateUrl: './muzima-form.component.html',
-  styleUrls: ['./muzima-form.component.css', './bootstrap.min.css', './muzima.css']
+  styleUrls: ['./muzima-form.component.css', './bootstrap.min.css']
 })
 export class MuzimaFormComponent implements OnInit {
 
@@ -50,32 +50,10 @@ export class MuzimaFormComponent implements OnInit {
     }
   }
 
-  onDropSection(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      const id = this.addSection();
-      event.previousContainer.data[event.previousIndex]['id'] = id;
-      console.log(event.previousContainer.data[event.previousIndex]);
-      copyArrayItem(this.createCopy(event.previousContainer.data),
-          event.container.data,
-          event.previousIndex,
-          event.currentIndex);
-    }
-  }
-
   select(field) {
     console.log('selected: ' + field);
     this.selected = field;
     this.selectedField.emit(field);
-  }
-
-  deleteField({ fields }, index) {
-    fields.splice(index, 1);
-    if (!fields.includes(this.selected)) {
-      this.selectedField.emit({});
-      this.selected = {};
-    }
   }
 
   createCopy(data) {

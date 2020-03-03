@@ -1,29 +1,3 @@
-.icon {
-  float: right;
-}
-
-.handle-icon {
-  color: #ccc;
-  cursor: move;
-  width: 24px;
-  height: 24px;
-}
-
-.delete-icon {
-  color: #ff0000;
-  cursor: grab;
-}
-
-.visible-icon {
-  color: #767978;
-}
-
-.selected {
-  padding: 5px;
-  border-radius: 5px;
-  background: #dde4e1;
-}
-
 .form {
   padding: 5px;
   min-height: 500px;
