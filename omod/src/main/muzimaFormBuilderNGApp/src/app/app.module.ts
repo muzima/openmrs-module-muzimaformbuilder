@@ -33,6 +33,7 @@ import { SearchComponent } from './search/search.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FormService } from './form.service';
 import { AboutComponent } from './about/about.component';
+import { SectionComponent } from './section/section.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AboutComponent } from './about/about.component';
     SearchComponent,
     HomePageComponent,
     NotifyComponent,
-    AboutComponent
+    AboutComponent,
+    SectionComponent
   ],
   imports: [
     BrowserModule,
