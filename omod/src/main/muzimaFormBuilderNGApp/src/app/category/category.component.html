@@ -8,9 +8,9 @@
     </mat-panel-description>
   </mat-expansion-panel-header>
 
-  <div cdkDropList id="{{ category.section? 'sectionsList' : 'fieldsList' }}" cdkDropListSortingDisabled
+  <div cdkDropList id="fieldsList" cdkDropListSortingDisabled
     [cdkDropListData]="category?.fields"
-    [cdkDropListConnectedTo]="category.hasOwnProperty('section')? ['form'] : sectionIds" class="fieldsList">
+    [cdkDropListConnectedTo]="sectionIds" class="fieldsList">
 
     <button mat-button routerLink="." *ngFor="let field of category?.fields" cdkDrag>{{ field.type }}</button>
 
