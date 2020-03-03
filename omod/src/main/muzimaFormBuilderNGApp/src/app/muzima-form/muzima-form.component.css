@@ -29,6 +29,8 @@
 
 .section-controllers .radio {
   border: 1px solid #6aa69f;
+  width: 18px;
+  height: 18px;
 }
 
 .section-controllers .delete {
