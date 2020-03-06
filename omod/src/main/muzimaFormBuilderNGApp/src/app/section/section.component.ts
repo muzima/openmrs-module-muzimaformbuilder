@@ -10,7 +10,7 @@ export class SectionComponent implements OnInit {
 
   @Input() section;
   @Output() selectEmitter = new EventEmitter();
-  // @Output() deleteEmitter = new EventEmitter();
+
   selected = {};
 
   constructor() { }
