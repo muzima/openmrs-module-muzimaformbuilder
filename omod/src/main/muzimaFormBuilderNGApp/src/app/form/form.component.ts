@@ -35,15 +35,20 @@ export class FormComponent implements OnInit {
     // keep it in this order it's important!
     this.htmlCode = this.htmlCode.replace(new RegExp('novalidate=""', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('"ng-[^"]+": "[^"]*"', 'g'), '');
-    this.htmlCode = this.htmlCode.replace(new RegExp('_ngcontent-.+""', 'g'), '');
+    this.htmlCode = this.htmlCode.replace(new RegExp('_ngcontent-[^=]+=""', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('ng-[^"]+="[^"]*"', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('ng-[^ "]+', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('cdk[^=-]*="[^"]*"', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('cdk-[^ "]+', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('style="[^"]*"', 'g'), '');
+    this.htmlCode = this.htmlCode.replace(new RegExp('<section[^>]+>', 'g'), '');
+    this.htmlCode = this.htmlCode.replace(new RegExp('<\/section>', 'g'), '');
+    this.htmlCode = this.htmlCode.replace(new RegExp('<div *class="section-controllers">(.|\n)+?(?=<\/div>)<\/div>', 'g'), '');
+    this.htmlCode = this.htmlCode.replace(new RegExp('<app-section[^>]+>', 'g'), '');
+    this.htmlCode = this.htmlCode.replace(new RegExp('<\/app-section>', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('id="formFieldsList#[0-9]+"', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('fields-list', 'g'), '');
-    this.htmlCode = this.htmlCode.replace(new RegExp('<div *class="icon((?!<\/div>).)*<\/div>', 'g'), '');
+    this.htmlCode = this.htmlCode.replace(new RegExp('<div +class="icon [^"]*" ?>(.|\n)*?(?=<\/div>)<\/div>', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('<!--bindings={[^}]*}-->', 'g'), '');
     this.htmlCode = this.htmlCode.replace(new RegExp('<!---->', 'g'), '');
   }
