@@ -5,7 +5,7 @@
     <h2 class="text-center">{{ form.name }}</h2>
     <div id="form" class="form" >
       
-      <div *ngFor="let section of form?.sections; index as i" class="section-container">
+      <section *ngFor="let section of form?.sections; index as i" class="section-container">
         <div class="section-controllers">
           <mat-icon class="arrow" (click)="moveup(i)">arrow_upward</mat-icon>
           <input type="radio" name="section" id="{{ section.id }}" class="radio" (click)="select(section)">
@@ -13,7 +13,7 @@
           <mat-icon class="arrow" (click)="movedown(i)">arrow_downward</mat-icon>
         </div>
         <app-section [section]="section" (selectEmitter)="select($event)" class="section-comp"></app-section>
-      </div>
+      </section>
 
     </div>
   </form>
